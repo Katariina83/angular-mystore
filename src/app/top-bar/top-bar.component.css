@@ -1,0 +1,60 @@
+/*TOP-BAR RULES!*/
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .topbar-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 6rem;
+    background-color:#48494B;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*asettaa elementit vastakkaisiin päihin*/
+    align-items: center;
+  }
+  
+  h1 {
+    color: white;
+    margin: 0;
+    font-weight: lighter;
+    text-decoration: none;
+  }
+
+  a {
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+
+  .button, button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:grey;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+  }
+
+  fa-icon {
+    padding-right: 0.5rem;
+  }
+
+  
+
+  

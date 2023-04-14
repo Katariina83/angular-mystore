@@ -1,0 +1,16 @@
+  
+  /*PRODUCT ALERTS COMP*/
+  button {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:crimson;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+  }

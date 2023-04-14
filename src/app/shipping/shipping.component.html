@@ -1,0 +1,10 @@
+<section class="shipping-container">
+
+<p>Our Shipping Prices:</p>
+
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.price | currency: 'EUR' : true }}</span>
+</div>
+
+</section>

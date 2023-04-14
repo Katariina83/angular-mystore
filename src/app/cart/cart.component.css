@@ -1,0 +1,29 @@
+.cart-container {
+
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+.cart-item {
+
+    color: black;
+    font-size: 1.2rem;
+}
+
+.empty-button  {
+    border-radius: 0.5rem;
+    padding: 5px 12px;
+    margin-top: 1rem;
+
+}
+
+.shipping {
+    position: inherit;
+    margin-top: 3rem;
+    color: black;
+    font-weight: bolder;
+}

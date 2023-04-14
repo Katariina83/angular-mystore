@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Home delivery ",
+    "price": 18.50
+  },
+  {
+    "type": "Quick delivery (2 days) ",
+    "price": 8.50
+  },
+  {
+    "type": "Postal package (3-6 days) ",
+    "price": 3.50
+  }
+]

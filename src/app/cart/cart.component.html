@@ -1,0 +1,20 @@
+<section class="cart-container">
+
+
+    <h3>Your Cart:</h3>
+
+    <p class="shipping">
+      <a routerLink="/shipping">Shipping Prices</a>
+    </p>
+
+      <div class="cart-bottom cart-item bg-light" *ngFor="let item of items">
+        <span>{{ item.name }}</span>
+        <span style="font-weight: bold;" class="ml-5">{{ item.price | currency: 'EUR' : true }}</span>
+
+    </div>
+
+
+    <button (click)="clearCart()" class="empty-button">Empty Cart</button>
+
+</section>
+
