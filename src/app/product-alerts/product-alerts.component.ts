@@ -1,27 +1,26 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotificationService } from '../notification.service';
-import { animate, style, transition, trigger } from '@angular/animations';
-// import { notificationAnimation } from './product-alerts.animations';
 
 @Component({
   selector: 'app-product-alerts',
   templateUrl: './product-alerts.component.html',
   styleUrls: ['./product-alerts.component.css'],
-  // animations: [notificationAnimation], // Add the animation
 })
-
 export class ProductAlertsComponent implements OnInit {
   notifications: any[] = [];
 
-  constructor(
-    public notificationService: NotificationService) {}
+  constructor(private notificationService: NotificationService) {}
 
   ngOnInit() {
+    // Subscribe to notifications from the NotificationService
     this.notificationService.getNotifications().subscribe((notification) => {
+      // Add the received notification to the array
       this.notifications.push(notification);
+      
+      // Optionally, you can remove notifications after a certain time
       setTimeout(() => {
         this.removeNotification(notification);
-      }, 5000); // Automatically remove the notification after 5 seconds (adjust as needed)
+      }, 2000); // Automatically remove the notification after 5 seconds (adjust as needed)
     });
   }
 
@@ -32,13 +31,3 @@ export class ProductAlertsComponent implements OnInit {
     }
   }
 }
-
-// export const notificationAnimation = trigger('notificationAnimation', [
-  // transition(':enter', [
-    // style({ opacity: 0, height: 0 }),
-    // animate('300ms ease-in', style({ opacity: 1, height: '*' })),
-  // ]),
-  // transition(':leave', [
-    // animate('300ms ease-out', style({ opacity: 0, height: 0 })),
-  // ]),
-// ]); 

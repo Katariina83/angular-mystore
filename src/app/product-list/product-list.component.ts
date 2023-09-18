@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
 import { ActivatedRoute } from '@angular/router';
-import { NotificationService } from '../notification.service';
+// import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public cartService: CartService,
-    public notificationService: NotificationService
+    // public notificationService: NotificationService
     ) { }
 
   ngOnInit(): void {
@@ -24,15 +24,13 @@ export class ProductListComponent implements OnInit {
 
   addToCart(products: Product) {
     this.cartService.addToCart(products);
-    window.alert(`Added ${products.name} to the cart.`);
-    this.notificationService.addNotification({message: `Added ${products.name} to the cart.`,    //Window-alert using Notification Service.
-    });
+    // window.alert(`Added ${products.name} to the cart.`);
+    // this.notificationService.addNotification({message: `${products.name} is in the shopping cart`,    //Window-alert using Notification Service.
+    // });
   }
 
-  
-
-  notifyUser() {
-    window.alert('You will be informed when the product is on Sale!')
-  }
+  // notifyUser() {
+  //   window.alert('You will be informed when the product is on Sale!')
+  // }
 
 }

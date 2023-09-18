@@ -6,28 +6,27 @@
 
 <h3>Available Phone Models</h3>
 <section class="product-container">
-    <div *ngFor="let product of products; index as ProductId" class="card" style="width: 20rem;">
-        <img src="{{ 'assets/img/pienet/' + product.id + '.jpeg' }}"class="card-img-top" alt="image of a phone"/>
-        <div class>
-          <!--Product card's main title:-->
-          <h4 [title]="product.name + ' details'" [routerLink]="['/products', product.id]">{{ product.name }}</h4>
-          <p *ngIf="product.description">{{ product.description }}</p>
+    <div class="card" *ngFor="let product of products; index as ProductId" style="width: 20rem;">
+        <img class="card-img-top" src="{{ 'assets/img/pienet/' + product.id + '.jpeg' }}" alt="image of a phone"/>
+        <div class="card-body">
+            <!--Product card's main title:-->
+            <h4 [title]="product.name + ' details'" [routerLink]="['/products', product.id]">{{ product.name }}</h4>
+            <p *ngIf="product.description">{{ product.description }}</p>
 
-          <!--Directs to product-details component:-->
-          <div class="phoneinfo"> 
-            <h4 id="more-details"><a [routerLink]="['/product-details', product.id]">More details</a></h4>
-          </div>
+            <!--Directs to product-details component:-->
+            <div class="phoneinfo"> 
+                <h4 id="more-details"><a [routerLink]="['/product-details', product.id]">More details</a></h4>
 
-          <!--PRICE:-->
-          <h5 id="price"><span style="font-weight: bolder;" *ngIf="product.price">{{ product.price | currency: 'EUR': true}}</span></h5>
+                <!--PRICE:-->
+                <h5 id="price"><span style="font-weight: bolder;" *ngIf="product.price">{{ product.price | currency: 'EUR': true}}</span></h5>
 
-          <!--Add to Cart and Notify me - buttons-->
-          <div class="buttons">
-              <a class="addtocart" (click)="addToCart(product)"><button class="addtocart">Add to cart</button></a>
-              
-              <button (click)="notifyUser()" class="notify">Notify me</button>
-          </div>
-  </div>
-</div>
+                <!--Add to Cart and Notify me - buttons-->
+                <div class="buttons">
+                    <a class="addtocart" (click)="addToCart(product)"><button class="addtocart">Add to cart</button></a>      
+                <!-- <button (click)="notifyUser()" class="notify">Notify me</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>

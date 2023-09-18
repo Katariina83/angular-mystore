@@ -1,12 +1,10 @@
 
-<section class="notifications-container">
-
-    <div class="notification" *ngFor="let notification of notifications" [@notificationAnimation]>
-        {{ notification.message }}
-        <button (click)="removeNotification(notification)">Close</button>
+<div *ngFor="let notification of notifications" class="notification">
+    <div [ngClass]="{'success': notification.type === 'success', 'error': notification.type === 'error'}">
+      {{ notification.message }}
     </div>
-
-</section>
+  </div>
+  
   
     
 

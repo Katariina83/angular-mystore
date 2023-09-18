@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
+import { NotificationService } from './notification.service';
 import { Product, products } from "./products";
 import { HttpClient } from '@angular/common/http';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,12 +12,17 @@ export class CartService {
   total: number = 0;      //Keep track of the total price of the items in the cart.
 
 constructor(
-  private http: HttpClient ) {}
+  private http: HttpClient,
+  public notificationService: NotificationService,
+  private snackBar: MatSnackBar
+  ) {}
 
   addToCart(product: Product) {
     this.items.push(product);
     this.total += product.price;    //Price is the property that holds the product's price.
-    window.alert(`Added ${product.name} to the cart.`);
+    this.snackBar.open(`Added ${product.name} to the cart.`, 'Close', {
+      duration: 2000, // Duration in milliseconds (adjust as needed)
+    });
   }
 
   getItems() {

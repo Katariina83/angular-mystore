@@ -7,6 +7,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
@@ -36,7 +38,9 @@ import { CartService } from './cart.service';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
