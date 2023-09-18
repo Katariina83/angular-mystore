@@ -1,20 +1,37 @@
 <section class="cart-container">
 
-
-    <h3>Your Cart:</h3>
-
-    <p class="shipping">
-      <a routerLink="/shipping">Shipping Prices</a>
-    </p>
-
-      <div class="cart-bottom cart-item bg-light" *ngFor="let item of items">
-        <span>{{ item.name }}</span>
-        <span style="font-weight: bold;" class="ml-5">{{ item.price | currency: 'EUR' : true }}</span>
-
+    <div class="header">
+        <a [routerLink]="['/']"><h1><fa-icon [icon]="faMobile"></fa-icon> Mobile Store&trade;</h1></a>
+        <p>Thank you for shopping with us!<br>We provide safe payment methods and full refund rights to our customers.</p>
     </div>
 
+    <div class="cart-main">
 
-    <button (click)="clearCart()" class="empty-button">Empty Cart</button>
+      <h3>Your Cart:</h3>
+        <!-- <div class="cart-bottom cart-item bg-light" *ngFor="let item of items">
+            <p><span>{{ item.name }}</span>
+            <span style="font-weight: bold;" class="ml-5">{{ item.price | currency: 'EUR' : true }}</span></p>
+        </div> -->
+        <hr>
+        <div class="total-price">
+            <ul>
+                <li *ngFor="let item of items"> {{ item.name }} € <span style="font-weight:bold"> {{ item.price }}</span>
+                  <button class="btn btn-remove" (click)="removeFromCart(item)">
+                      <fa-icon class="fa-trash" [icon]="faTrash"></fa-icon>
+                  </button></li>
+            </ul>
+        <hr>
+            <p>Total: € {{ total }}</p>
+        </div>
+
+    
+      </div>
+
+
+    <button class="btn-back" (click)="goBack()">Go back</button>
+
+    <button class="btn-proceed">Proceed to checkout</button>
+
 
 </section>
 

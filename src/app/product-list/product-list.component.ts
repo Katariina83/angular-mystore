@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, products } from '../products';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CartService } from '../cart.service';
 import { ActivatedRoute } from '@angular/router';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,23 +10,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.css']
 })
 
-export class ProductListComponent  {
+export class ProductListComponent implements OnInit {
   products = products;
-  faFacebook = faFacebook;
-  faInstagram = faInstagram;
-  faTwitter = faTwitter;
 
-  addToCart(Product: Product) {
-    this.cartService.addToCart(Product);
-    window.alert('Woohoo! Your new phone has been added to the cart!');
+  constructor(
+    private route: ActivatedRoute,
+    public cartService: CartService,
+    public notificationService: NotificationService
+    ) { }
+
+  ngOnInit(): void {
   }
 
-    constructor(
-      private route: ActivatedRoute,
-      private cartService: CartService
-    ) { }
+  addToCart(products: Product) {
+    this.cartService.addToCart(products);
+    window.alert(`Added ${products.name} to the cart.`);
+    this.notificationService.addNotification({message: `Added ${products.name} to the cart.`,    //Window-alert using Notification Service.
+    });
+  }
+
+  
 
   notifyUser() {
     window.alert('You will be informed when the product is on Sale!')
   }
-  }
+
+}

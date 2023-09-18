@@ -1,31 +1,32 @@
 
   
   <figure class="banner">
-    <img src="../assets/img/iso-iphone-xs.jpeg">
-</figure>
+    <img id="banner-image" src="../assets/img/iso-iphone-xs.jpeg">
+  </figure>
 
 <h3>Available Phone Models</h3>
 <section class="product-container">
     <div *ngFor="let product of products; index as ProductId" class="card" style="width: 20rem;">
         <img src="{{ 'assets/img/pienet/' + product.id + '.jpeg' }}"class="card-img-top" alt="image of a phone"/>
-        <div class><h4
-          [title]="product.name + ' details'"
-          [routerLink]="['/products', product.id]">
-          {{ product.name }}</h4>
-        
+        <div class>
+          <!--Product card's main title:-->
+          <h4 [title]="product.name + ' details'" [routerLink]="['/products', product.id]">{{ product.name }}</h4>
           <p *ngIf="product.description">{{ product.description }}</p>
-          <span style="font-weight: bolder;" *ngIf="product.price">{{ product.price | currency: 'EUR': true}}</span>
-          <br>
-          <a class="button buynow-button" (click)="addToCart(product)">Buy Now</a>
 
-          
-          <button (click)="notifyUser()" class="notify-button">Notify me</button>
+          <!--Directs to product-details component:-->
+          <div class="phoneinfo"> 
+            <h4 id="more-details"><a [routerLink]="['/product-details', product.id]">More details</a></h4>
+          </div>
 
-    <article>
-        <a href="https://www.facebook.com"> <fa-icon [icon]="faFacebook"></fa-icon></a>
-        <a href="https://www.instagram.com"> <fa-icon [icon]="faInstagram"></fa-icon></a>
-        <a href="https://www.twitter.com"> <fa-icon [icon]="faTwitter"></fa-icon></a>
-    </article>
+          <!--PRICE:-->
+          <h5 id="price"><span style="font-weight: bolder;" *ngIf="product.price">{{ product.price | currency: 'EUR': true}}</span></h5>
+
+          <!--Add to Cart and Notify me - buttons-->
+          <div class="buttons">
+              <a class="addtocart" (click)="addToCart(product)"><button class="addtocart">Add to cart</button></a>
+              
+              <button (click)="notifyUser()" class="notify">Notify me</button>
+          </div>
   </div>
 </div>
 

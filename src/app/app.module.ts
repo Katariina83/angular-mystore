@@ -7,40 +7,36 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+
+import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartComponent } from './cart/cart.component';
-import { FooterComponent } from './footer/footer.component';
-import { CartService } from './cart.service';
 import { ShippingComponent } from './shipping/shipping.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
-
+import { CartService } from './cart.service';
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
+    LayoutComponent,
+    FooterComponent,
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
     TopBarComponent,
-    CartComponent,
-    FooterComponent,
     ShippingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     FontAwesomeModule,
-    CommonModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductListComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent }
-    ])
+    CommonModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

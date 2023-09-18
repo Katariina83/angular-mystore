@@ -1,5 +1,4 @@
 {
-  "homepage": "https://katariina83.github.io/angular-mystore/",
   "name": "angular-mystore",
   "version": "0.0.0",
   "scripts": {
@@ -13,6 +12,7 @@
   },
   "private": false,
   "dependencies": {
+    "-": "^0.0.1",
     "@angular/animations": "^15.1.0",
     "@angular/common": "^15.1.0",
     "@angular/compiler": "^15.1.0",
@@ -28,6 +28,8 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "firebase-tools": "^11.27.0",
+    "g": "^2.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

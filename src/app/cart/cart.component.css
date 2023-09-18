@@ -1,10 +1,50 @@
-.cart-container {
+/*Mobile first*/
 
+.cart-container {
     margin-top: 6rem;
     padding: 1rem;
 }
 
-h3 {
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 6rem;
+    background-color:#48494B;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*asettaa elementit vastakkaisiin päihin*/
+    align-items: center;
+}
+
+.header p {
+  font-size: 0.6rem;
+  max-width: 40%;
+}
+
+.header p {
+    color: white;
+    padding-top: 2rem;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-weight: lighter;
+    text-decoration: none;
+  }
+
+a {
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    color:#48494B;
+  }
+
+h3, h5 {
+  margin-top: 1rem;
     font-weight: lighter;
 }
 
@@ -14,16 +54,45 @@ h3 {
     font-size: 1.2rem;
 }
 
-.empty-button  {
+.button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+
+  .btn-back, .btn-proceed {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem;
+    margin: 1.5rem 1rem 0 0;
+    border-radius: 2px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color:grey;
     border-radius: 0.5rem;
-    padding: 5px 12px;
-    margin-top: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+  }
 
-}
+  .btn-remove {
+    border: none;
+    cursor: pointer;
+    
+  }
 
-.shipping {
-    position: inherit;
-    margin-top: 3rem;
-    color: black;
-    font-weight: bolder;
-}
+  .fa-trash {
+    color: red;
+    background-color: none;
+  }
+
+  .total-price ul {
+    list-style-type: none;
+  }
+
+
+  @media only screen and (min-width: 1024px) {
+    .header p {
+      font-size: 1rem;
+      max-width: 70%;
+    }
+  }

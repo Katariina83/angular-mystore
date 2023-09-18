@@ -1,4 +1,37 @@
-<p>Key features:
-    5.8" Super Retina display
-    Face ID facial recognition, Animoji
-    12 Mpx dual camera</p>
+<section class="container">
+
+    <h2 class="product-title">Product details</h2>
+    
+    <div *ngIf="product">
+        <h2>{{ product.name }}</h2>
+
+        <div id="description-large">
+            <p>{{ product.descriptionLarge }}</p>
+        </div>
+
+        <hr>
+
+        <div id="price">
+            <h5>Price: </h5>
+            <p>{{ product.price | currency: 'EUR': true }}</p>
+        </div>
+        
+        <div id="storage">
+            <h5>Storage: </h5>
+            <p>{{ product.storage }} GB</p>
+        </div>
+
+        <div id="screen">
+            <h5>Screen size: </h5>
+            <p>{{ product.screen }}"</p>
+        </div>
+
+        <div id="screen">
+            <h5>Weight: </h5>
+            <p>{{ product.weight }}g</p>
+        </div>
+    </div>
+
+      <button class="btn" (click)="goBack()">Go back</button>
+      
+</section>
